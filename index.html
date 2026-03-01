@@ -13,16 +13,38 @@
         font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
     }
 
+    html, body {
+        height: 100%;
+        overflow: hidden;
+    }
+
     body {
-        height: 100vh;
         display: flex;
         justify-content: center;
         align-items: center;
-        overflow: hidden;
+        /* Apply the combined strobe animation */
+        animation: strobeBackground 5s infinite;
+    }
+
+    /* Cool combined red-blue strobe background */
+    @keyframes strobeBackground {
+        0%   { background-color: #660000; }
+        10%  { background-color: #990033; }
+        20%  { background-color: #660066; }
+        30%  { background-color: #330099; }
+        40%  { background-color: #000066; }
+        50%  { background-color: #330066; }
+        60%  { background-color: #660033; }
+        70%  { background-color: #990033; }
+        80%  { background-color: #660066; }
+        90%  { background-color: #330099; }
+        100% { background-color: #660000; }
     }
 
     .container {
         text-align: center;
+        z-index: 1;
+        position: relative;
     }
 
     h1 {
